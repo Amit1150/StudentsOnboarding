@@ -15,7 +15,7 @@ For login:
 To use this project  
     1. Clone this repository  
     2. run `npm install` in root directory  
-    3. run command `ng server`  
+    3. run command `ng serve`  
 
 
 ## Development server
