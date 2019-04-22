@@ -31,14 +31,20 @@
                   pPassword
                   required
                   ngModel
+                  (ngModelChange)="checkPassword(loginForm)"
                   name="password" 
                   #password="ngModel" 
                   [feedback]="false" 
                   type="password"/>
                 <p-message 
-                  *ngIf="password.touched && !password.valid" 
+                  *ngIf="password.touched && !password.valid && password.errors.required" 
                   severity="error" 
                   text="Password is required.">
+                </p-message>
+                <p-message 
+                  *ngIf="password.touched && !password.valid && password.errors.incorrect" 
+                  severity="error" 
+                  text="Invalid password.">
                 </p-message>
             </div>
         </div>
@@ -62,5 +68,4 @@
       </div>
     </div>
   </form>
-
 </div>

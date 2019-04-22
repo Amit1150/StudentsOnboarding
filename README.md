@@ -7,7 +7,7 @@ To View Live: https://amit1150.github.io/StudentsOnboarding
   
 For login:  
     Username: What ever you want  
-    Password: you can use anything.  
+    Password: use either `123` or `test`.  
     e.g: Username : Amit, Password: 123  
 
   

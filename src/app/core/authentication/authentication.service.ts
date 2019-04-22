@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Token } from 'src/app/models/Token';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,27 +6,31 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-
+  passwords: string[] = ['123', 'test']
   tokenKey: string = "user_token";
   accessToken: string= "nagp2019";
   user$: BehaviorSubject<Token> = new BehaviorSubject(this.getToken());
   
-  constructor(private router: Router) { }
+  constructor() { }
 
   login(username:string, password: string) {
-    var token : Token = {
-      userName : username,
-      accessToken : this.accessToken
-    };
-    this.user$.next(token);
-    this.setToken(token);
-    this.router.navigate(['student/add']);
+    if(this.passwords.indexOf(password) > -1) {
+      var token : Token = {
+        userName : username,
+        accessToken : this.accessToken
+      };
+      this.user$.next(token);
+      this.setToken(token);
+      
+      return true;
+    }else {
+      return false;
+    }
   }
 
   logout() {
     this.user$.next(null);
     this.removeToken();
-    this.router.navigate(['login']);
   }
 
   getToken() : Token {
