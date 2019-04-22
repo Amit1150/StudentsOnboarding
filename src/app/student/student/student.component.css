@@ -1,0 +1,47 @@
+.student-container {
+    width: 75%;
+    margin: 25px 5%;
+    border: solid 1px #c3c0c0;
+}
+.nav-tabs {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+
+.nav-item {
+    display: table-cell;
+    float: none;
+    width: 1%;
+    position: relative;
+    vertical-align: middle;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+}
+
+.nav-link:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.nav-link.active {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+.nav-link.active:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.nav-tabs>.nav-item:focus, .nav-tabs>.nav-item:focus {
+    outline: 0;
+}

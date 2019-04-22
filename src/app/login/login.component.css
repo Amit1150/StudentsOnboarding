@@ -1,0 +1,18 @@
+.input-label {
+    margin-bottom: -10px;
+}
+.login-form {
+    width: 30%;
+    padding: 20px;
+    margin: 10% auto;
+    background-color: #fff;
+}
+.login-container {
+    background-color: #ccc;
+    height: 100%;
+    width:100%;
+    position: absolute;
+}
+.login-label {
+    margin: 10px auto;
+}

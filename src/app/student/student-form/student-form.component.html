@@ -1,0 +1,122 @@
+<div class="studen-form">
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="ui-fluid">
+        <div class="ui-g">
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+              Student Name<span class="field-required">*</span>
+            </div>
+            <div class="ui-g-8">
+              <input 
+                pInputText 
+                formControlName="name" 
+                type="text" />
+              <p-message 
+                *ngIf="name.touched && !name.valid" 
+                severity="error" 
+                text="Name is required.">
+              </p-message>  
+            </div>
+          </div>
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+              Category<span class="field-required">*</span>
+            </div>
+            <div class="ui-g-8">
+              <p-dropdown
+                formControlName="category" 
+                [options]="categories" 
+                optionLabel="name" 
+                (onChange)="onCategorySelect($event)">
+              </p-dropdown>
+              <p-message 
+                *ngIf="(category.touched || category.dirty) && !category.valid" 
+                severity="error" 
+                text="Category is required.">
+              </p-message>
+            </div>
+          </div>
+          <div class="ui-g-12" *ngIf="documents.length > 0">
+            <div class="ui-g-4">
+              Documents
+            </div>
+            <div class="ui-g-8">
+              <div class='documents' formArrayName="documents">
+                <div *ngFor="let document of documents; let i = index">
+                  <div class="ui-g-12">
+                    <p-checkbox
+                      [formControlName]="i"
+                      [binary]="true"
+                      [name]="document.id" 
+                      [value]="document" 
+                      [label]="document.name" 
+                      [inputId]="document.id">
+                    </p-checkbox>
+                    <span *ngIf="document.isRequired" class="field-required">*</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+              DOB
+            </div>
+            <div class="ui-g-8">
+                <p-calendar
+                  formControlName="dob" 
+                  [monthNavigator]="true" 
+                  [yearNavigator]="true"
+                  dateFormat="dd/M/yy"
+                  [maxDate]="maxDate" 
+                  [readonlyInput]="true"
+                  yearRange="1970:2019">
+                </p-calendar>
+            </div>
+          </div>
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+              Father's Name
+            </div>
+            <div class="ui-g-8">
+              <input
+                formControlName="fatherName" 
+                pInputText 
+                type="text" />
+            </div>
+          </div>
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+                Mother's Name
+            </div>
+            <div class="ui-g-8">
+              <input 
+                formControlName="motherName" 
+                pInputText type="text" />
+            </div>
+          </div>
+          <div class="ui-g-12 ">
+            <div class="ui-g-4">
+              Last Class Score
+            </div>
+            <div class="ui-g-8">
+              <input 
+                formControlName="score" 
+                pInputText type="text" />
+            </div>
+          </div>
+          <div class="ui-g-2 btn-container">
+            <div>
+              <button 
+              pButton 
+              [disabled]="!form.valid || isView" 
+              [label]="isUpdate ? 'Update' : 'Onboard'" 
+              type="submit">
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

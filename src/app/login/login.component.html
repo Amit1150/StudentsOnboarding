@@ -1,0 +1,66 @@
+
+<div class="ui-fluid login-container">
+  <form #loginForm="ngForm" class="login-form" (ngSubmit)="login(loginForm)">
+    <div class="ui-g">
+      <h3 class="login-label">Login School Admin</h3>
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-g-12 input-label">
+                User Name
+            </div>
+            <div class="ui-g-12">
+                <input 
+                  pInputText 
+                  required
+                  ngModel 
+                  name="userName" 
+                  #userName="ngModel" 
+                  type="text" />
+                <p-message 
+                  *ngIf="userName.touched && !userName.valid" 
+                  severity="error" 
+                  text="Username is required.">
+                </p-message>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-g-12 input-label">
+                Password
+            </div>
+            <div class="ui-g-12">
+                <input 
+                  pPassword
+                  required
+                  ngModel
+                  name="password" 
+                  #password="ngModel" 
+                  [feedback]="false" 
+                  type="password"/>
+                <p-message 
+                  *ngIf="password.touched && !password.valid" 
+                  severity="error" 
+                  text="Password is required.">
+                </p-message>
+            </div>
+        </div>
+      <div class="ui-g-12">
+        <div class="ui-g-5">
+          <button 
+            pButton 
+            [disabled]="!loginForm.valid" 
+            label="Login" 
+            type="submit">
+          </button>
+        </div>
+        <div class="ui-g-5 push-right">
+          <button 
+            pButton 
+            (click)="reset(loginForm)"
+            label="Reset" 
+            type="button">
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

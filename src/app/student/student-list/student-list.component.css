@@ -1,0 +1,24 @@
+.row-nternational {
+    background-color: #f8f5dc !important;
+}
+
+.row-domestic {
+    background-color: #dfebf6 !important;
+}
+
+.table-no-record {
+    text-align: center;
+}
+
+.action .ui-button.ui-button-text-only .ui-button-text {
+    padding: 0.15em .5em;
+}
+
+td.action .btn {
+    margin: 0 5px;
+    padding: 2px 8px;
+}
+
+.filter-container {
+    height: 35px;
+}
