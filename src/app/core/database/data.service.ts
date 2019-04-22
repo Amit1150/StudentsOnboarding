@@ -33,11 +33,7 @@ export class DataService implements InMemoryDbService {
       {id : 12, name : 'Declaration', isRequired: true, categoryId : 2, isSelected : false},
     ];
 
-    let students: Student[] = [
-      {id: 1, name : 'amit', category : { id: 2, name: 'Domestic'}, documents : [], dob: '', fatherName: '', motherName: '',score: '10'},
-      {id: 2, name : 'test', category : { id: 1, name: 'International'}, documents : [], dob: '', fatherName: '', motherName: '',score: '12'},
-      {id: 3, name : 'rahul', category : { id: 2, name: 'Domestic'}, documents : [], dob: '', fatherName: '', motherName: '',score: '34'},
-    ];
+    let students: Student[] = [];
 
     return {
       categories : categories,
