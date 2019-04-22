@@ -1,18 +1,21 @@
 # StudentsOnboarding
+  
+Angular assignment - NAGP 2019  
+  
+To View Live: https://amit1150.github.io/StudentsOnboarding  
+  
+  
+For login:  
+    Username: What ever you want  
+    Password: you can use anything.  
+    e.g: Username : Amit, Password: 123  
 
-Angular assignment - NAGP 2019
-
-To View Live: https://amit1150.github.io/StudentsOnboarding
-
-For login: 
-    Username: What ever you want
-    Password: you can use anything. 
-    e.g: Username : Amit, Password: 123
-
-To use this project
-    1. Clone this repository
-    2. run `npm install` in root directory
-    3. run command `ng server`
+  
+  
+To use this project  
+    1. Clone this repository  
+    2. run `npm install` in root directory  
+    3. run command `ng server`  
 
 
 ## Development server
